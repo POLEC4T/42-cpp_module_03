@@ -1,0 +1,69 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: miloniemaz <mniemaz@student.42lyon.fr>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/08/12 01:19:06 by miloniemaz        #+#    #+#             */
+/*   Updated: 2025/08/13 01:24:44 by miloniemaz       ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "./ScavTrap.hpp"
+
+using namespace std;
+
+ScavTrap::ScavTrap() {
+    _hitPoints = _initHitPoints;
+    _energyPoints = _initEnergyPoints;
+    _attackDamage = _initAttackDamage;
+    cout << "ScavTrap " << _name << " created" << endl;
+}
+
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
+    _hitPoints = _initHitPoints;
+    _energyPoints = _initEnergyPoints;
+    _attackDamage = _initAttackDamage;
+    cout << "ScavTrap " << _name << " created" << endl;
+}
+
+ScavTrap::~ScavTrap() {
+    cout << "ScavTrap " << _name << " destroyed" << endl;
+}
+
+ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other) {
+    cout << "ScavTrap " << _name << " created (copy)" << endl;
+}
+
+ScavTrap& ScavTrap::operator=(const ScavTrap &other) {
+    if (this == &other)
+        return (*this);
+    ClapTrap::operator=(other);
+    cout << "ScavTrap " << _name << " created (assignment)" << endl;
+    return (*this);
+}
+
+void ScavTrap::attack(const std::string& target) {
+
+    if (_energyPoints <= 0) {
+        cout << "ScavTrap " << _name 
+             << " has no energy left to attack!" << endl;
+        return;
+    }
+    if (_hitPoints <= 0) {
+        cout << "ScavTrap " << _name 
+             << " cannot attack because it has no hit points left!" << endl;
+        return;
+    }
+    _energyPoints--;
+    cout << "ScavTrap " << _name 
+        << " attacks " << target 
+        << ", causing " << _attackDamage 
+        << " points of damage!" << endl;
+}
+
+void ScavTrap::guardGate() {
+    cout << "ScavTrap " << _name <<
+        " is now in gate keeper mode!" << endl; 
+}
