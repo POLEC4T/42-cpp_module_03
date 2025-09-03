@@ -6,7 +6,7 @@
 /*   By: mniemaz <mniemaz@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 00:35:31 by miloniemaz        #+#    #+#             */
-/*   Updated: 2025/09/03 13:58:08 by mniemaz          ###   ########.fr       */
+/*   Updated: 2025/09/03 14:31:58 by mniemaz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class ClapTrap {
         ClapTrap (const ClapTrap &other);
 
         ClapTrap(std::string name);
-        void attack(const std::string& target);
+        virtual void attack(const std::string& target);
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
 };
