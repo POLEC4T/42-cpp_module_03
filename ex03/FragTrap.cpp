@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miloniemaz <mniemaz@student.42lyon.fr>     +#+  +:+       +#+        */
+/*   By: mniemaz <mniemaz@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 01:19:06 by miloniemaz        #+#    #+#             */
-/*   Updated: 2025/08/13 01:23:32 by miloniemaz       ###   ########.fr       */
+/*   Updated: 2025/09/03 13:46:40 by mniemaz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 using namespace std;
 
-FragTrap::FragTrap() {
+FragTrap::FragTrap() : ClapTrap("Unknown fragtrap") {
     _hitPoints = _initHitPoints;
     _energyPoints = _initEnergyPoints;
     _attackDamage = _initAttackDamage;
@@ -29,7 +29,7 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name) {
 }
 
 FragTrap::~FragTrap() {
-    cout << "FragTrap " << _name << " destroyed" << endl;
+    cout << "FragTrap " << _name << " deleted" << endl;
 }
 
 FragTrap::FragTrap(const FragTrap &other) : ClapTrap(other) {

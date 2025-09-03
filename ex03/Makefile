@@ -5,12 +5,14 @@ SRCS = ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp main.cpp
 OBJS = $(SRCS:.cpp=.o)
 RM = rm -f
 
+INCS = ClapTrap.hpp ScavTrap.hpp FragTrap.hpp DiamondTrap.hpp
+
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
 
-%.o: %.cpp
+%.o: %.cpp $(INCS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
@@ -21,4 +23,7 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+debug:
+	@echo $(INCS)
+
+.PHONY: all clean fclean re debug

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miloniemaz <mniemaz@student.42lyon.fr>     +#+  +:+       +#+        */
+/*   By: mniemaz <mniemaz@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 00:35:20 by miloniemaz        #+#    #+#             */
-/*   Updated: 2025/08/12 02:38:48 by miloniemaz       ###   ########.fr       */
+/*   Updated: 2025/09/03 12:40:53 by mniemaz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,13 @@
 
 int main() {
 
-    // replace every scav by frag
-
     FragTrap fragtrap1("FragTrap1");
     fragtrap1.takeDamage(5);
-    FragTrap fragtrap2(fragtrap1); // Copy constructor
+    FragTrap fragtrap2(fragtrap1);
 
     fragtrap2.takeDamage(5);
-    // assignment operator
-    FragTrap fragtrap3;
-    fragtrap3 = fragtrap2;
 
-    fragtrap3.attack("another fragtrap");
+    fragtrap1.attack("another fragtrap");
 
     fragtrap1.highFivesGuys();
     return 0;

@@ -5,12 +5,14 @@ SRCS = ClapTrap.cpp ScavTrap.cpp main.cpp
 OBJS = $(SRCS:.cpp=.o)
 RM = rm -f
 
+INCS = ClapTrap.hpp ScavTrap.hpp
+
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
 
-%.o: %.cpp
+%.o: %.cpp $(INCS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:

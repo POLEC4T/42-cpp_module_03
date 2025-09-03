@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miloniemaz <mniemaz@student.42lyon.fr>     +#+  +:+       +#+        */
+/*   By: mniemaz <mniemaz@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 01:19:06 by miloniemaz        #+#    #+#             */
-/*   Updated: 2025/08/12 02:34:19 by miloniemaz       ###   ########.fr       */
+/*   Updated: 2025/09/03 12:42:23 by mniemaz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 using namespace std;
 
-ScavTrap::ScavTrap() {
-    _name = "Unknown scavtrap";
+ScavTrap::ScavTrap() : ClapTrap("Unknown scavtrap") {
     _hitPoints = 100;
     _energyPoints = 50;
     _attackDamage = 20;
@@ -30,7 +29,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
 }
 
 ScavTrap::~ScavTrap() {
-    cout << "ScavTrap " << _name << " destroyed" << endl;
+    cout << "ScavTrap " << _name << " deleted" << endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other) {

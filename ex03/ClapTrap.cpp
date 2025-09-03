@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miloniemaz <mniemaz@student.42lyon.fr>     +#+  +:+       +#+        */
+/*   By: mniemaz <mniemaz@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 00:35:28 by miloniemaz        #+#    #+#             */
-/*   Updated: 2025/08/13 01:20:01 by miloniemaz       ###   ########.fr       */
+/*   Updated: 2025/09/03 12:01:59 by mniemaz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ ClapTrap:: ~ClapTrap() {
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other) {
-    _name = other._name;
+    _name = other._name + "_copy";
     _attackDamage = other._attackDamage;
     _hitPoints = other._hitPoints;
     _energyPoints = other._energyPoints;
@@ -37,15 +37,15 @@ ClapTrap::ClapTrap(const ClapTrap &other) {
 ClapTrap& ClapTrap::operator=(const ClapTrap &other) {
     if (this == &other)
         return (*this);
-    _name = other._name;
+    _name = other._name + "_assigned";
     _attackDamage = other._attackDamage;
     _hitPoints = other._hitPoints;
     _energyPoints = other._energyPoints;
-    cout << "ClapTrap " << _name << " created (assignment)" << endl;
+    cout << "ClapTrap " << _name << " assigned" << endl;
     return (*this);
 }
 
-ClapTrap:: ClapTrap(string name) {
+ClapTrap::ClapTrap(string name) {
     _name = name;
     _hitPoints = _initHitpoints;
     _energyPoints = _initEnergyPoints;
@@ -73,6 +73,11 @@ void ClapTrap::attack(const std::string& target) {
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
+    if (_hitPoints <= 0) {
+        cout << "ClapTrap " << _name 
+             << " cannot take more damage because it has no hit points left!" << endl;
+        return;
+    }
     if (amount > _hitPoints)
         _hitPoints = 0;
     else
@@ -84,7 +89,13 @@ void ClapTrap::takeDamage(unsigned int amount) {
          << _hitPoints << endl;
 }
 
+
 void ClapTrap::beRepaired(unsigned int amount) {
+    if (_hitPoints <= 0) {
+        cout << "ClapTrap " << _name 
+             << " cannot be repaired because it has no hit points left!" << endl;
+        return;
+    }
     if (_energyPoints <= 0) {
         cout << "ClapTrap " << _name 
              << " has no energy left to repair!" << endl;

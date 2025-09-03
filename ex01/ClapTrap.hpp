@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miloniemaz <mniemaz@student.42lyon.fr>     +#+  +:+       +#+        */
+/*   By: mniemaz <mniemaz@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 00:35:31 by miloniemaz        #+#    #+#             */
-/*   Updated: 2025/08/12 01:53:28 by miloniemaz       ###   ########.fr       */
+/*   Updated: 2025/09/03 13:58:08 by mniemaz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
