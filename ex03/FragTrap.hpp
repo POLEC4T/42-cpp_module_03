@@ -6,7 +6,7 @@
 /*   By: mniemaz <mniemaz@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 01:19:06 by miloniemaz        #+#    #+#             */
-/*   Updated: 2025/09/03 13:46:42 by mniemaz          ###   ########.fr       */
+/*   Updated: 2025/09/08 15:53:33 by mniemaz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 #define FRAGTRAP_H
 
 #include "./ClapTrap.hpp"
+#include <iostream>
 
 class FragTrap: public virtual ClapTrap {
-
 	protected:
-		static const unsigned int _initHitPoints    = 100;
+		static const unsigned int _initHitPoints = 100;
 		static const unsigned int _initEnergyPoints = 100;
 		static const unsigned int _initAttackDamage = 30;
 
@@ -30,7 +30,7 @@ class FragTrap: public virtual ClapTrap {
 
 		FragTrap(std::string name);
 		virtual void attack(const std::string& target);
-        void highFivesGuys();
+        virtual void highFivesGuys();
 };
 
 #endif

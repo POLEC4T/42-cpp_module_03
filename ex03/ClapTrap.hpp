@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miloniemaz <mniemaz@student.42lyon.fr>     +#+  +:+       +#+        */
+/*   By: mniemaz <mniemaz@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 00:35:31 by miloniemaz        #+#    #+#             */
-/*   Updated: 2025/08/13 01:33:22 by miloniemaz       ###   ########.fr       */
+/*   Updated: 2025/09/08 16:17:17 by mniemaz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class ClapTrap {
     protected:
         const static unsigned int _initHitpoints = 10;
         const static unsigned int _initEnergyPoints = 10;
-        const static unsigned int _initAttackDamage = 10;
+        const static unsigned int _initAttackDamage = 0;
         std::string _name;
         unsigned int _hitPoints;
         unsigned int _energyPoints;
@@ -36,10 +36,10 @@ class ClapTrap {
         virtual void attack(const std::string& target);
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
+        virtual void guardGate();
+        virtual void highFivesGuys();
+		virtual void whoAmI();
 
-        unsigned int getHitPoints() const { return _hitPoints; }
-        unsigned int getEnergyPoints() const { return _energyPoints; }
-        unsigned int getAttackDamage() const { return _attackDamage; }
 };
 
 #endif

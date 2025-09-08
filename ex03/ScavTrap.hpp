@@ -6,7 +6,7 @@
 /*   By: mniemaz <mniemaz@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 01:19:06 by miloniemaz        #+#    #+#             */
-/*   Updated: 2025/09/03 13:56:44 by mniemaz          ###   ########.fr       */
+/*   Updated: 2025/09/08 15:48:06 by mniemaz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class ScavTrap: public virtual ClapTrap {
 
 		ScavTrap(std::string name);
 		void attack(const std::string& target);
-        void guardGate();
+        virtual void guardGate();
 };
 
 #endif
